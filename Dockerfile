@@ -24,7 +24,6 @@ RUN mkdir -p static/dcvjs
 
 # 设置环境变量
 ENV PYTHONPATH=/app
-ENV AWS_DEFAULT_REGION=us-east-1
 
 # 暴露端口
 EXPOSE 8000

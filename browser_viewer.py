@@ -22,7 +22,8 @@ console = Console()
 def get_temp_live_view_url(browser_session_id):
 
     # Get session info from Parameter Store
-    param_manager = ParameterStoreManager()
+    region = os.environ.get('AWS_DEFAULT_REGION', 'us-east-1')
+    param_manager = ParameterStoreManager(region_name=region)
     session_data = param_manager.get_parameter(f"/browser-session/{browser_session_id}", as_dict=True)
 
     if not session_data:
